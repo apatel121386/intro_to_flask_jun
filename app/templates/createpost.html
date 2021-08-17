@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h4>Create a new post:</h4> 
+
+<form action="" method="POST">
+    {{ form.csrf_token }}
+    <div class="form-group">
+        <fieldset>
+            {{ form.title.label }}
+            {{ form.title(class='form-control', placeholder='Title') }}
+        </fieldset>
+        <fieldset>
+            {{ form.body.label }}
+            {{ form.body(class='form-control', placeholder='Body') }}
+        </fieldset>
+        {{ form.submit(class='btn btn-primary') }}
+    </div>
+</form>
+
+{% endblock content %}

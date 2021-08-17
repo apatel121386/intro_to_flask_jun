@@ -2,7 +2,16 @@
 
 {% block content %}
 
-<h1>Hello World, this is my Home page</h1>
-<h4>And how are you, {{ name }}?</h4>
+<h1>Welcome to the Coding Temple Blog!</h1>
+
+{% for p in posts %}
+    <div class="card mb-3">
+        <div class="card-body">
+        <h5 class="card-title">{{ p.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ p.author.username }}</h6>
+        <p class="card-text">{{ p.body }}</p>
+        </div>
+    </div>
+{% endfor %}
 
 {% endblock content %}
